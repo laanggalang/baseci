@@ -43,14 +43,14 @@
                                 </div> -->
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">Kategori</label>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="kategori" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Kategori
-                                    </button>
-                                    <div class="dropdown-menu" arialabelledby="kategori">
-                                        <a class="dropdown-item" value="<?$kategori['nama_kategori']?>"></a>
+                                    <div class="col-sm-8">
+                                        <select name="id_kategori" class="form-control" required>
+                                            <option value="">Pilih Kategori</option>
+                                            <?php foreach($kategori as $b): ?>
+                                            <option <?php if($b['id_kategori'] == $produk_edit['id_kategori']) { echo "selected"; } ?> value="<?php echo $b['id_kategori']?>"><?php echo $b['nama_kategori']?></option>
+                                            <?php endforeach; ?>    
+                                        </select>
                                     </div>
-                                </div>
                                 </div>
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary pull-right">Submit</button>

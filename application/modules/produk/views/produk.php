@@ -22,6 +22,7 @@
                                             <th>Harga Produk</th>
                                             <th>Stok</th>
                                             <th>Kategori</th>
+                                            <th>User</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,6 +34,7 @@
                                             <td><?php echo $b['harga']; ?></td>
                                             <td><?php echo $b['stok']; ?></td>
                                             <td><?php echo $b['nama_kategori']; ?></td>
+                                            <td><?php echo $b['nama']; ?></td>
                                             <td>
                                                 <a href="<?=base_url();?>produk/edit/<?php echo simple_encrypt($b['id_produk']); ?>" class="btn btn-flat btn-warning">Edit</a>
                                                 &nbsp;&nbsp;

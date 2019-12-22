@@ -14,6 +14,7 @@ class Produk extends CI_Controller{
         $this->load->model('../m_crud');
         $this->load->model('../m_global');
         $this->load->model('m_produk');
+        $this->load->model('kategori/m_kategori');
         if ($this->session->userdata('logged')<>1) {
             redirect(site_url('administrator'));
         }
@@ -21,7 +22,7 @@ class Produk extends CI_Controller{
 
     public function index() {
         $data['title'] = $this->title;
-        $data['produk'] = $this->m_produk->get_produk_join_kategori();
+        $data['produk'] = $this->m_produk->get_produk_join();
         $data['views'] = 'produk';
         $this->load->view('new/header',$data);
     }
@@ -31,6 +32,7 @@ class Produk extends CI_Controller{
     {
         $data['title'] = $this->title;
         $data['views'] = 'input_produk';
+        $data['kategori'] = $this->m_kategori->get_kategori();
         $this->load->view('new/header',$data);
     }
 
@@ -49,6 +51,8 @@ class Produk extends CI_Controller{
             'deskripsi' => $this->input->post('deskripsi'),
             'harga' => $this->input->post('harga'),
             'stok' => $this->input->post('stok'),
+            'id_user' => $_SESSION['id_user'],
+            'id_kategori' => $this->input->post('id_kategori'),
         );
         $result = $this->m_crud->insert('produk', $data);
         redirect('produk/');
@@ -60,6 +64,7 @@ class Produk extends CI_Controller{
         $data['views'] = 'edit_produk';
         $id = simple_decrypt($id);
         $data['produk_edit'] = $this->m_produk->get_produk($id);
+        $data['kategori'] = $this->m_kategori->get_kategori();
         $this->load->view('new/header',$data);
     }
 

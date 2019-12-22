@@ -38,6 +38,17 @@
                                         <input type="text" name="stok" class="form-control" required>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Kategori</label>
+                                    <div class="col-sm-8">
+                                        <select name="id_kategori" class="form-control" required>
+                                            <option value="">Pilih Kategori</option>
+                                            <?php foreach($kategori as $b): ?>
+                                            <option value="<?php echo $b['id_kategori']?>"><?php echo $b['nama_kategori']?></option>
+                                            <?php endforeach; ?>    
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                 </div>
