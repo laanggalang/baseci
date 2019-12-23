@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Des 2019 pada 05.52
+-- Waktu pembuatan: 23 Des 2019 pada 04.11
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.1.32
 
@@ -65,8 +65,11 @@ CREATE TABLE `produk` (
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `deskripsi`, `harga`, `stok`, `id_user`, `id_kategori`) VALUES
 (2, 'test cuk', 'iya cuk', 3333333, 50, 2, 2),
 (3, 'percobaan', 'befjndijefb', 123456, 23, 2, 1),
-(4, 'hydro coco', 'air kelapa asli', 3500, 25, 0, 0),
-(5, 'indomie', 'makan mie mulu', 2000, 30, 0, 1);
+(4, 'hydro coco', 'air kelapa asli', 3500, 25, 0, 1),
+(5, 'indomie', 'makan mie mulu', 2000, 30, 0, 1),
+(6, 'nfjijppopdip', 'nsonspijapoj', 1234553, 13, 2, 0),
+(7, 'kahbfaifhifp', 'kjowhwfpqjo', 123456, 32, 2, 0),
+(8, 'jhablcaj;ooo', 'dsbsdvi', 12345, 12, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -125,7 +128,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
